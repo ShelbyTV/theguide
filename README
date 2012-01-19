@@ -8,6 +8,7 @@ SETUP
 
 GETTING STARTED
 ---------------
+0. start the server by running 'node app.js'
 1. run 'node tests/simple-test.js' - look at the test file, see what is happening
 2. look at routes/index.js - read the TODO - this is your code start point
 3. going to need youtube & vimeo API clients 2 options:
