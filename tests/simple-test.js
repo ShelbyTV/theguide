@@ -19,10 +19,17 @@ var params = {
   url : 'http://www.youtube.com/watch?v=BV9lC0u24Ik'
 };
 
+var params2 = {
+	url: 'http://vimeo.com/30203159'
+};
+
 // function to execute once request is responded to
 var callback = function(err, json_response){
   console.log('GOT RESPONSE', json_response);
 };
 
-// execute the request
+// Youtube request
 http_get.get(http_options, params, callback);
+
+//Vimeo request (weird bug if you send both of these)
+http_get.get(http_options, params2, callback);
