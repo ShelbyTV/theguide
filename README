@@ -1,0 +1,15 @@
+SETUP
+-----
+1. install node (nodejs.org)
+2. install npm [node package manager] (npmjs.org)
+3. clone this repo
+4. in the root dir of the repo run 'npm install -d' [install all the dependences specified in the package.json file]
+5. to start the server run 'node app.js' - server will be running on port 3000 of localhost
+
+GETTING STARTED
+---------------
+1. run 'node tests/simple-test.js' - look at the test file, see what is happening
+2. look at routes/index.js - read the TODO - this is your code start point
+3. going to need youtube & vimeo API clients 2 options:
+---- get them from github (better, if available and quality is high)
+---- write them yourself (could probably leverage lib/http_get.js)
