@@ -18,8 +18,8 @@ exports.resolve = function(req, res){
   var gdata;
 
   //regular expressions to check for
-  var youtubeRegEx = new RegExp("youtube.com");
-  var vimeoRegEx = new RegExp("vimeo.com");
+  var youtubeRegEx = new RegExp(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i);
+  var vimeoRegEx = new RegExp(/http:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/);
 
   //Callbacks for API requests
   var gdataYoutube = function(err, json_response) {
