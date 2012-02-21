@@ -18,8 +18,8 @@ exports.resolve = function(req, res){
   var gdata;
 
   //regular expressions to check for
-  var youtubeRegEx = new RegExp("youtube.com");
-  var vimeoRegEx = new RegExp("vimeo.com");
+  var youtubeRegEx = new RegExp(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i);
+  var vimeoRegEx = new RegExp(/http:\/\/(www\.)?vimeo.com\/(\d+)($|\/)/);
 
   //Callbacks for API requests
   var gdataYoutube = function(err, json_response) {
@@ -83,7 +83,7 @@ exports.resolve = function(req, res){
   
   if(req.query.url.match(youtubeRegEx)) {
       var lastY = req.query.url.lastIndexOf("=");
-      var yid = req.query.url.substring(lastY+1);
+      var yid = req.query.url.substring(lastY+1,lastY+12);
 
       //youtube api call options
       var gdataOptions = {
@@ -101,7 +101,7 @@ exports.resolve = function(req, res){
       http_get._makeRequest(gdataOptions, gdataYoutube);
   } else if(req.query.url.match(vimeoRegEx)) {
       var lastV = req.query.url.lastIndexOf("/");
-      var vid = req.query.url.substring(lastV+1);
+      var vid = req.query.url.substring(lastV+1, lastY+13);
 
       var vimeoOptions = {
         host: 'vimeo.com',
