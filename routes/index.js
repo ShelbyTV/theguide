@@ -50,7 +50,6 @@ exports.resolve = function(req, res){
         thumbnail_height: json_response.thumbnail_height,
         author_url: json_response.author_url
       };
-	  console.log("Here");
       res.send(youtubeData);
     } else {
       res.send({error: "ERROR"});
@@ -82,8 +81,9 @@ exports.resolve = function(req, res){
   }
   
   if(req.query.url.match(youtubeRegEx)) {
-      var lastY = req.query.url.lastIndexOf("=");
-      var yid = req.query.url.substring(lastY+1,lastY+12);
+      var lastY = req.query.url.indexOf("v=");
+      var yid = req.query.url.substring(lastY+2,lastY+13);
+	  console.log(yid);
 
       //youtube api call options
       var gdataOptions = {

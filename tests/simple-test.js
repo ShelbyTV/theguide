@@ -9,14 +9,14 @@ var http_get = require('../lib/http-get.js');
 // the request
 var http_options = {
   host : '127.0.0.1', //aka localhost
-  port : '3000',
+  port : '1337',
   path : '/resolve',
   method : 'GET'
 }
 
 // the GET params
-var params = { 
-  url : 'http://www.youtube.com/watch?v=BV9lC0u33bc'
+var params = {
+  url : 'http://www.youtube.com/watch?v=CkIBdNDXkgU&feature=g-all-u&context=G29030b2FAAAAAAAAAAA'
 };
 
 var params2 = {
