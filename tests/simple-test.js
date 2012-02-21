@@ -16,7 +16,7 @@ var http_options = {
 
 // the GET params
 var params = { 
-  url : 'http://www.youtube.com/watch?v=BV9lC0u24Ik'
+  url : 'http://www.youtube.com/watch?v=BV9lC0u33bc'
 };
 
 var params2 = {
@@ -32,4 +32,4 @@ var callback = function(err, json_response){
 http_get.get(http_options, params, callback);
 
 //Vimeo request (weird bug if you send both of these)
-http_get.get(http_options, params2, callback);
+//http_get.get(http_options, params2, callback);

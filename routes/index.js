@@ -27,7 +27,7 @@ exports.resolve = function(req, res){
       gdata = json_response;
       http_get._makeRequest(oembedYoutubeOptions, oembedYoutube);
     } else {
-      res.send({error: err});
+      res.send({error: 'GDATA ERROR'});
     }
   }
 
@@ -50,9 +50,10 @@ exports.resolve = function(req, res){
         thumbnail_height: json_response.thumbnail_height,
         author_url: json_response.author_url
       };
+	  console.log("Here");
       res.send(youtubeData);
     } else {
-      res.send({error: err});
+      res.send({error: "ERROR"});
     }
   }
 
@@ -76,7 +77,7 @@ exports.resolve = function(req, res){
       }
       res.send(vimeoData);
     } else {
-      res.send({error: err});
+      res.send({error: "DIDNT WORK"});
     }
   }
   
