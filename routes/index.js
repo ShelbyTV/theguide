@@ -82,6 +82,8 @@ exports.resolve = function(req, res){
   
   if(req.query.url.match(youtubeRegEx)) {
       var lastY = req.query.url.indexOf("v=");
+      if(lastY === -1)
+	lastY = req.query.url.indexOf("v/");
       var yid = req.query.url.substring(lastY+2,lastY+13);
 	  console.log(yid);
 

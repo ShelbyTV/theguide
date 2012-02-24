@@ -16,7 +16,7 @@ var http_options = {
 
 // the GET params
 var params = {
-  url : 'http://www.youtube.com/watch?v=CkIBdNDXkgU&feature=g-all-u&context=G29030b2FAAAAAAAAAAA'
+  url : 'http://www.youtube.com/v/p4d-SNTGxLw'
 };
 
 var params2 = {
